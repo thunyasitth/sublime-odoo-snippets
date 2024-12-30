@@ -1,0 +1,53 @@
+<snippet>
+    <content><![CDATA[
+{
+    'name': '${1:Human readable name}',
+    'summary': '${2:${1}}',
+    'version': '0.1',
+    'category': 'Uncategorized',
+    'license': 'OPL-1',
+
+    'author': '${3} ${4} Co., Ltd.',
+    'created_by': '${5}',
+    'maintainer': '${5}',
+    'website': 'https://www.${6:${3}}.${7}',
+    
+    'description': """
+Description
+===========
+
+
+Changelog
+---------
+
+**Version 0.1**
+    - Initial release
+
+    """,
+    
+    'depends': ['base'],
+    'external_dependencies': {
+        'python': [],
+    },
+    'data': [
+    ],
+    'demo': [
+    ],
+    'js': [
+    ],
+    'css': [
+    ],
+    'qweb': [
+    ],
+    'images': [
+    ],
+    'test': [
+    ],
+    'application': True,
+    'installable': True,
+}${0}
+]]></content>
+    <tabTrigger>__manifest__</tabTrigger>
+    <scope>source.python</scope>
+    <description>Odoo manifest file common structure</description>
+</snippet>

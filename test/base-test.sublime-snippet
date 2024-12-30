@@ -1,0 +1,47 @@
+<snippet>
+    <content><![CDATA[
+# -*- coding: utf-8 -*-
+###############################################################################
+#    License, author and contributors information in:                         #
+#    __manifest__.py file at the root folder of this module.                  #
+###############################################################################
+
+from odoo import fields, Command
+from odoo.tests.common import TransactionCase, HttpCase, tagged, Form
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools import mute_logger
+import os
+import json
+import time
+import base64
+from lxml import etree
+from unittest import SkipTest
+import psycopg2
+from freezegun import freeze_time
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+from odoo.addons.{0:custom_module}.models.${3:model} import ${1:ClassName}
+
+@tagged('-standard', '{0:custom_module}')
+class Test${1:ClassName}(TransactionCase):
+
+    def setUp(self):
+        super().setUp()
+        self.${2:variable} = self.env['${3:model}'].create({
+            'name': 'Test',
+        })
+
+    def test_${4:method}(self):
+        """ Checks if the ${4:method} works properly
+        """
+        ${5}
+        pass
+
+    def tearDown(self):
+        # self._close_websockets()
+        super().tearDown()
+]]></content>
+    <tabTrigger>odoo-test</tabTrigger>
+    <scope>source.python</scope>
+    <description>Odoo Python test file</description>
+</snippet>
+
