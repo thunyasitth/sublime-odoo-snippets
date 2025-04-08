@@ -1,0 +1,35 @@
+<snippet>
+    <content><![CDATA[
+
+
+<!--  inherit_id: "${1:parent_module_name}.${2/\./\_/g}"
+    - model_id  : ${2:model}
+    - _rec_name : ${3:name}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<!-- Inherit Tree view for "${2/(.)/\1/g}" -->
+<record id="${2/\./\_/g}_tree" model="ir.ui.view">
+    <field name="name">view.${2/\.+/\./g}.tree</field>
+    <field name="model">${2/\.+/\./g}</field>
+    <field name="type">tree</field>
+    <field name="inherit_id" ref="${1:base_module}.${2/\./\_/g}_tree"/>
+    <field name="arch" type="xml">
+        ${4}
+    </field>
+</record>
+
+<!-- Inherit Form view for "${2/(.)/\1/g}" -->
+<record id="${2/\./\_/g}_form" model="ir.ui.view">
+    <field name="name">view.${2/\.+/\./g}.form</field>
+    <field name="model">${2/\.+/\./g}</field>
+    <field name="type">form</field>
+    <field name="inherit_id" ref="${1:base_module}.${2/\./\_/g}_form"/>
+    <field name="arch" type="xml">
+        ${5}
+    </field>
+</record>
+]]></content>
+    <tabTrigger>inheritview</tabTrigger>
+    <scope>text.xml</scope>
+    <description>Views: tree, form inherit</description>
+</snippet>
